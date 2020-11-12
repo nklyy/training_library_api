@@ -49,6 +49,12 @@
         ]
       }
     ],
-    "quote-props": "off"
+    "quote-props": "off",
+    "no-restricted-globals": [
+      "error",
+      "event",
+      "fdescribe"
+    ],
+    "no-return-assign": "off"
   }
 }
