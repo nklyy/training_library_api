@@ -6,13 +6,13 @@ const setBookModel = new Schema({
     required: true,
     unique: true,
     minlength: 5,
-    maxlength: 20,
+    maxlength: 50,
   },
   author: {
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 20,
+    maxlength: 50,
   },
   date: {
     type: Date,
@@ -23,7 +23,7 @@ const setBookModel = new Schema({
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 20,
+    maxlength: 200,
   },
   image: {
     type: String,

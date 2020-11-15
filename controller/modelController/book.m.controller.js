@@ -22,18 +22,18 @@ class BookModelController {
     }
 
     // Создание query для группировки.
-    const orderObj = {};
+    const groupObj = {};
     groupBy.split(/,| |;/).forEach((i) => {
       if (!checkList.includes(i)) {
         throw new Error('Please enter correct groupBy query');
       }
-      orderObj[i] = `$${i}`;
+      groupObj[i] = `$${i}`;
     });
 
     // Группировка
     const groupBook = await BookModel.aggregate(
       [
-        { $group: { _id: orderObj } },
+        { $group: { _id: groupObj } },
         { $sort: { [`_id.${orderBy}`]: 1 } },
         { $skip: (Number(offset) - 1) * Number(limit) },
         { $limit: Number(limit) },
